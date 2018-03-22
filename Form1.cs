@@ -23,7 +23,6 @@ namespace Inlamning3
         public Form1()
         {
             InitializeComponent();
-            //SqlConnection myConnection = new SqlConnection("user id=sa; password=1234;server=KIARASHPC; Trusted_Connection=yes; database=airbnbtest; connection timeout=10");
             myConnection.ConnectionString = "Data Source=KIARASHPC;Initial Catalog=airbnbtest;Integrated Security=True";
 
         }
@@ -51,7 +50,7 @@ namespace Inlamning3
                     roomId = (int)myReaderBos["room_id"];
                     hostId = (int)myReaderBos["host_id"];
                     roomType = myReaderBos["room_type"].ToString();
-                    borough = myReaderBos["borough"].ToString(); //För borough måste ni kolla om borough är String
+                    borough = myReaderBos["borough"].ToString(); 
                     neighbourhood = myReaderBos["neighborhood"].ToString();
                     reviews = (Int32)myReaderBos["reviews"];
                     overallSatisfaction = double.TryParse(myReaderBos["overall_satisfaction"].ToString(), out var test) ? test : 0;
@@ -143,7 +142,7 @@ namespace Inlamning3
         {
             
             if (itm == "Barcelona")
-                cityVal = BarcelonaX; //-----------Change of cityval
+                cityVal = BarcelonaX; 
             else if (itm == "Amsterdam")
                 cityVal = AmsterdamX;
             else
@@ -177,7 +176,7 @@ namespace Inlamning3
         private void HistogramPlot()
         {
             if (itm == "Barcelona")
-                cityVal = BarcelonaX; //-----------Change of cityval
+                cityVal = BarcelonaX; 
             else if (itm == "Amsterdam")
                 cityVal = AmsterdamX;
             else
@@ -197,7 +196,8 @@ namespace Inlamning3
                             select line;
 
             var query = from r in histogram
-                        group r by r.Price - (r.Price % 10) into r
+                       
+                     group r by r.Price - (r.Price % 10) into r
                         select new
                         {
                             Range = r.Key,
