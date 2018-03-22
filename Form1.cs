@@ -23,7 +23,7 @@ namespace Inlamning3
         public Form1()
         {
             InitializeComponent();
-            myConnection.ConnectionString = "Data Source=KIARASHPC;Initial Catalog=airbnbtest;Integrated Security=True";
+            myConnection.ConnectionString = "Data Source=ADMIN;Initial Catalog=airbnbtest;Integrated Security=True";
 
         }
 
